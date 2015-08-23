@@ -74,12 +74,14 @@ Usage:
     a.$user->all('student'); //executes SELECT * FROM `student` and returns array of result.
 
     b.$user->all('student','2') //executes SELECT * FROM `student` where `id`='2'.
+
  2.insert(<tablename string>,<columnname-values array>)
 
  	 Perfoms insert query in database.
  	 return true if success else return false.
  	 Usage:
- 	 a.$user->insert('student',['id'=>'1','name'=>'jhon','mark'=>'50']).  
+ 	 a.$user->insert('student',['id'=>'1','name'=>'jhon','mark'=>'50']). 
+
  	 //executes INSERT INTO `student`(`id`, `name`, `mark`) VALUES ('1','jhon','50')
 
 3.delete(<tablename string>,<id string>)
@@ -98,9 +100,11 @@ Usage:
     Usage:
 
     a.$user->update('student',['name'=>'rahul','mark'=>'100']);
+
      //executes UPDATE `student` SET `name`="rahul",`mark`="100".
 
     b.$user->update('student',['name'=>'rahul','mark'=>'100'],'2');
+
     //executes UPDATE `student` SET `name`="rahul",`mark`="100" WHERE `id`='2'.
 
 5.customQuery(<query string>,<parameters array>)
@@ -112,12 +116,15 @@ Usage:
 
    a.$user->customQuery($query,$data); 
    $query="delete  from `student` where `id`=? and `mark`=?";
+
    $data=['2','50']
+   
    //executes delete  from `student` where `id`='2' and `mark`='50' and returns number of affected rows.
 
    b.$user->customQuery($query,$data);
 
      $query="select * from `student` where `id`=? and `mark`=?";
      $data=['2','50'];
+
      //executes select *   from `student` where `id`='2' and `mark`='50'
      and returns the result as array.
