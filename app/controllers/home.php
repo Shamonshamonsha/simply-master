@@ -13,9 +13,14 @@
      */
  	public function index()
  	{
+
+ 		$this->helper('form');
  		//index view
- 		$this->view('home/index');
- 				
+ 		$this->view('home/index');		
+ 	}
+ 	public function test()
+ 	{
+ 		print_r($_POST);
  	}
  }
 ?>

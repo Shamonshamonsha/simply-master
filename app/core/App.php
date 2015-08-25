@@ -72,7 +72,7 @@
 
  			$url=explode('/',filter_var(rtrim($_GET['url'],'/'),FILTER_SANITIZE_URL));
  			//if the routing didn't work properly comment the following two lines and use this
- 			/* return $url; */
+ 			//return $url; 
  			unset($url[0]);
  			return array_values($url);
  		}

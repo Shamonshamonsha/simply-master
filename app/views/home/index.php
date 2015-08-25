@@ -16,6 +16,10 @@
                 You can find this html in <strong>app/views/</strong> folder,
                 And the controller for this is located in <strong>app/controlles/</strong> folder.
             </p>
-        </div>            
+        </div>  
+       <form action="<?php echo get_url(); ?>/home/test" method="post">
+        <input type="text" name="name"><br>
+        <input type="submit" value="test">
+    </form>
     </body>
 </html>

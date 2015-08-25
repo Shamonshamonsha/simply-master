@@ -52,8 +52,22 @@
  	{
  		require_once '../app/views/error.php';
  	}
+    /**
+     * Load the helper file
+     *
+     * @param $name file-name of the helper
+     * @return void
+     */
+    public function helper($name)
+    {
+       
+             if(!file_exists('../app/helpers/'.$name.'_helper.php'))
+            {
+                echo '<h4>Unable to load the helper file:&nbsp;'.$name.'_helper.php</h4>';
+                return;
+            }
+            require_once('../app/helpers/'.$name.'_helper.php');    
+    }
  }
-  if($_POST){
-     print_r($_POST);
-  }
+  
 ?>
